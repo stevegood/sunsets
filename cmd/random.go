@@ -14,7 +14,7 @@ var cmdRandom = &cobra.Command{
 	Long:  `sunset generates and outputs a random sunset SVG.`,
 	Args:  cobra.MinimumNArgs(0),
 	Run: func(cmd *cobra.Command, args []string) {
-		sunset.Random(os.Stdout, 512, 512)
+		sunset.Random(os.Stdout, 1280, 720)
 	},
 }
 
