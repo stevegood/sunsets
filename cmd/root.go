@@ -17,8 +17,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/spf13/cobra"
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
@@ -27,7 +28,7 @@ import (
 var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
-var rootCmd = &cobra.Command{Use:   "sunsetgen"}
+var rootCmd = &cobra.Command{Use: "sunsets"}
 
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
@@ -59,9 +60,9 @@ func initConfig() {
 			os.Exit(1)
 		}
 
-		// Search config in home directory with name ".sunsetgen" (without extension).
+		// Search config in home directory with name ".sunsets" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".sunsetgen")
+		viper.SetConfigName(".sunsets")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
